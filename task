@@ -1,0 +1,15 @@
+monsters = {}
+file = open("monsters_simple.txt", "r")
+for line in file:
+    line = line.strip()
+    line_items = line.split(",")
+    name = line_items[0]
+    desc = line_items[1]
+    monsters[name] = desc
+file.close()
+print(monsters)
+search_value = input(str("Enter name of monster: "))
+try:
+    print(monsters[search_value])
+except KeyError:
+    print("That monster isn't here")
